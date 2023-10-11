@@ -1,0 +1,78 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  height: 100vh;
+}
+
+.admin-form {
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+
+  .heading {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+  }
+
+  h1 {
+    padding-bottom: 30px;
+    font-size: 35px;
+    font-weight: 600;
+  }
+
+  h2 {
+    padding-bottom: 15px;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .error {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+  }
+}
+
+.admin-panel-user {
+  .body {
+    margin: 50px;
+
+    .user-info {
+      width: 100%;
+      cursor: default;
+
+      th {
+        font-size: 20px;
+        padding-bottom: 30px;
+      }
+
+      td {
+        padding: 15px 0;
+      }
+
+      .edit-user {
+        border: none;
+        background-color: transparent;
+        color: $blue;
+        text-decoration: none;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+label.required {
+  &:after {
+    content: "*";
+    color: $red;
+    position: relative;
+    left: 4px;
+  }
+}

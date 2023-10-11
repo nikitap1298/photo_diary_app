@@ -1,0 +1,14 @@
+.diary-row {
+  ion-item {
+    --min-height: 70px;
+  }
+
+  h3 {
+    font-size: medium;
+  }
+
+  .date-col {
+    display: flex;
+    align-items: center;
+  }
+}

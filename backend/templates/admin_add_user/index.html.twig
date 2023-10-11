@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{"admin.addUser"|trans}}
+{% endblock %}
+
+{% block body %}
+	<div class="admin-form">
+		<h1 class="heading">{{"admin.addUser"|trans}}</h1>
+		{{ form_start(addUserForm) }}
+		{{ form_row(addUserForm.userName) }}
+		{{ form_row(addUserForm.email) }}
+		{{ form_row(addUserForm.password) }}
+		{{ form_row(addUserForm.verified)}}
+
+		<button type="submit" class="btn btn-primary">{{"admin.addUser"|trans}}</button>
+		{{ form_end(addUserForm) }}
+		<a href="{{ path('app_admin_panel_user_cancel') }}" class="btn btn-danger mt-3">{{"admin.cancel"|trans}}</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+.diary-info-page {
+  ion-content {
+    --background: hsl(222, 6%, 97%);
+
+    @media (prefers-color-scheme: dark) {
+      --background: hsl(222, 6%, 19%);
+    }
+  }
+
+  ion-toolbar {
+    --background: var(--ion-color-light-tint);
+    --border-color: var(--ion-color-light-tint);
+  }
+
+  ion-avatar {
+    width: 125px;
+    height: 125px;
+  }
+
+  .row-2 {
+    margin: 10px 0;
+  }
+
+  .hr-row-3 {
+    width: 75%;
+    border-top: 1px solid var(--ion-color-dark);
+    border-radius: 8px;
+  }
+
+  .row-4 {
+    margin: 10px auto;
+    width: 75%;
+  }
+
+  .row-form {
+    ion-item {
+      margin: 10px 0;
+      width: 75%;
+      border-radius: 8px;
+    }
+  }
+
+  .row-list {
+    ion-list {
+      margin: 10px 0;
+      width: 75%;
+      border-radius: 8px;
+    }
+  }
+
+  .row-image-previews {
+    margin-top: 100px;
+  }
+}

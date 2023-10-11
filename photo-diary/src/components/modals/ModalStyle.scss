@@ -1,0 +1,25 @@
+.custom-modal {
+  --width: 90%;
+  --height: 150px;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  &::part(backdrop) {
+    opacity: 1;
+  }
+
+  ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: white;
+  }
+
+  ion-item,
+  ion-toggle {
+    margin-top: 20px;
+
+    @media (prefers-color-scheme: dark) {
+      --background: var(--ion-color-step-100);
+      --color: white;
+    }
+  }
+}

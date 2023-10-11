@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{"admin.editUser"|trans}}
+{% endblock %}
+
+{% block body %}
+	<div class="admin-form">
+		<h1 class="heading">{{"admin.editUser"|trans}}</h1>
+		{{ form_start(editUserForm) }}
+		{{ form_row(editUserForm.userName) }}
+		{{ form_row(editUserForm.email) }}
+		{{ form_row(editUserForm.verified) }}
+
+		<button type="submit" class="btn btn-primary">{{"admin.confirm"|trans}}</button>
+		{{ form_end(editUserForm) }}
+		<a href="{{ path('app_admin_panel_user_cancel') }}" class="btn btn-danger mt-3">{{"admin.cancel"|trans}}</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+.authentification {
+  height: 100vh;
+  display: flex;
+  align-items: end;
+  // background-color: lightgray;
+
+  h1 {
+    margin-bottom: 250px;
+    text-align: center;
+  }
+
+  .form {
+    margin-bottom: 25px;
+  }
+
+  .submit-btn {
+    margin-bottom: 25px;
+  }
+}

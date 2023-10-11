@@ -1,0 +1,21 @@
+.send-message {
+  .custom {
+    @media (prefers-color-scheme: dark) {
+      --background: #373737;
+      --color: whites;
+    }
+
+    margin-right: 10px;
+    --border-radius: 10px;
+    --background: white;
+    --color: black;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --placeholder-color: gray;
+    --placeholder-opacity: 1;
+  }
+
+  ion-buttons {
+    margin-bottom: 7px;
+  }
+}

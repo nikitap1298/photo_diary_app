@@ -1,0 +1,45 @@
+version: "3.7"
+services:
+  mailhog:
+    image: jcalonso/mailhog
+    ports:
+      - 8025:8025
+      - 1025:1025
+
+  database:
+    image: "mysql:latest"
+    environment:
+      MYSQL_ROOT_PASSWORD: 99Ygz5d@
+      MYSQL_DATABASE: photo_diary
+    ports:
+      # To allow the host machine to access the ports below, modify the lines below.
+      # For example, to allow the host to connect to port 3306 on the container, you would change
+      # "3306" to "3306:3306". Where the first port is exposed to the host and the second is the container port.
+      # See https://docs.docker.com/compose/compose-file/compose-file-v3/#ports for more information.
+      - "3306:3306"
+  backend:
+    build:
+      context: ./backend
+      # dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+      - ./backend/images:/app/images
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    environment:
+      APP_ENV: dev
+      APP_SECRET: fddb76fa82470d75c1f6f040bb10a91e
+      DATABASE_URL: mysql://root:99Ygz5d@@database:3306/photo_diary?serverVersion=8.0.32
+      CORS_ALLOW_ORIGIN: "*"
+
+      JWT_SECRET_KEY: "%kernel.project_dir%/config/jwt/private.pem"
+      JWT_PUBLIC_KEY: "%kernel.project_dir%/config/jwt/public.pem"
+      JWT_PASSPHRASE: b9b3b4fb27ab80c2df0c90dae9d453461373d8a497872d1b22522914a4462560
+      JWT_TOKEN_TTL: 31536000
+
+      MAILER_DSN: example:smtp://0.0.0.0:1025
+
+volumes:
+  image-volume:

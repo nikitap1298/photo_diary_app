@@ -1,0 +1,19 @@
+admin: 
+  panel: Панель администратора
+  users: Пользователи
+  number: Число
+  addUser: Добавить
+  editUser: Изменить
+  cancel: Отменить
+  confirm: Подтвердить
+
+user: 
+  logIn: Войти
+  logOut: Выйти
+  email: Эл. почта
+  password: Пароль
+  userName: Имя пользователя
+  verified: Верифицирован
+  createdAt: Создан
+  verifiedTrue: Да
+  verifiedFalse: Нет

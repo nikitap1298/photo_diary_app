@@ -1,0 +1,4 @@
+kreait_firebase:
+  projects:
+    my_project:
+      credentials: "%kernel.project_dir%/photo-diary-60e6c-firebase-adminsdk-m9xod-c9d12808c1.json"

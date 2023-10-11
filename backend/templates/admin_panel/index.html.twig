@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{"admin.panel"|trans}}
+{% endblock %}
+
+{% block body %}
+	<div class="admin-panel-user">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="">{{"admin.panel"|trans}}</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="">{{"admin.users"|trans}}</a>
+						</li>
+					</ul>
+					<form action="{{ path('app_admin_logout') }}" method="post">
+						<button class="btn btn-outline-danger" type="submit">{{"user.logOut"|trans}}</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<div class="body">
+			<a href="{{ path('app_admin_panel_user_add') }}" class="btn btn-primary mb-4">{{"admin.addUser"|trans}}</a>
+			<table class="user-info">
+				<tr>
+					<th>{{"admin.number"|trans}}</th>
+					<th>{{"user.userName"|trans}}</th>
+					<th>{{"user.email"|trans}}</th>
+					<th>{{"user.verified"|trans}}</th>
+					<th>{{"user.createdAt"|trans}}</th>
+				</tr>
+
+				{% for user in users %}
+					<tr>
+						<td>{{loop.index}}</td>
+						<td>{{user.username}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.verified == 1 ? "user.verifiedTrue"|trans
+							:
+							"user.verifiedFalse"|trans}}</td>
+						<td>{{user.createdAt|date("d-m-Y H:i")}}</td>
+						<td>
+							<a href="{{ path('app_admin_panel_user_edit', {'id': user.id}) }}" class="edit-user">{{"admin.editUser"|trans}}</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+{% endblock %}

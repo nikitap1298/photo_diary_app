@@ -1,0 +1,19 @@
+admin: 
+  panel: Admin Panel
+  users: Users
+  number: Number
+  addUser: Add user
+  editUser: Edit
+  cancel: Cancel
+  confirm: Confirm
+
+user: 
+  logIn: Log In
+  logOut: Log Out
+  email: Email
+  password: Password
+  userName: User name
+  verified: Verified
+  createdAt: Created at
+  verifiedTrue: Yes
+  verifiedFalse: No
